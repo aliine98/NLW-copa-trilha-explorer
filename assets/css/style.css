@@ -1,0 +1,156 @@
+:root {
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+   --card-bg-color: #202024;
+   --card-color-primary: #338AF3;
+   --bg: url(../imagens/bg-purple.svg);
+}
+
+body.yellow {
+   --card-bg-color: #1D1C19;
+   --card-color-primary: #F7DD43;
+   --bg: url(../imagens/bg-yellow.svg);
+}
+
+body.green {
+   --card-bg-color: #1A1F1B;
+   --card-color-primary: #047C3F;
+   --bg: url(../imagens/bg-green.svg);
+}
+
+body {
+   background-color: #121214;
+   background-image: var(--bg);
+   background-position-x: center;
+   background-position-y: -700px;
+   background-repeat: no-repeat;
+}
+
+#app {
+   margin: 52px auto;
+   width: fit-content;
+}
+
+header {
+   margin-bottom: 63px;
+   text-align: center;
+}
+
+.button-change-color {
+   background: transparent;
+   border: 1px solid #E1E1E6;
+   border-radius: 10px;
+   color: #E1E1E6;
+   font-size: 0.9rem;
+   font-weight: 700;
+   margin-right: 10px;
+   margin-top: 10px;
+   padding: 5px;
+   position: absolute;
+   right: 0;
+   text-align: center;
+   top: 0;
+}
+
+.button-change-color,
+option {
+   cursor: pointer;
+}
+
+option {
+   color: #000;
+   padding: 5px 0;
+}
+
+.cards {
+   display: flex;
+   flex-direction: column;
+   gap: 32px;
+}
+
+.card {
+   animation: appear 0.8s forwards;
+   background: var(--card-bg-color);
+   border-bottom: 2px solid var(--card-color-primary);
+   border-radius: 6px;
+   opacity: 0;
+   padding: 32px 23px;
+   text-align: center;
+}
+
+.card h2 {
+   align-items: center;
+   border: 1px solid var(--card-color-primary);
+   border-radius: 6px;
+   color: #F7DD43;
+   display: flex;
+   font-size: 24px;
+   font-weight: 700;
+   gap: 16px;
+   justify-content: center;
+   margin-bottom: 53px;
+   margin-inline: auto;
+   padding: 8px 16px;
+   width: fit-content;
+}
+
+.card h2 span {
+   color: #E1E1E6;
+   font-size: 14px;
+   text-transform: uppercase;
+}
+
+.card ul {
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+   width: 270px;
+}
+
+.card ul li {
+   align-items: center;
+   display: flex;
+   justify-content: space-between;
+}
+
+.card ul li+li {
+   border-top: 1px solid #323238;
+   padding-top: 24px;
+}
+
+.card ul li strong {
+   color: #E1E1E6;
+   font-size: 36px;
+   font-weight: 900;
+   line-height: 125%;
+}
+
+.card h2,
+.card ul li strong,
+.card ul li img {
+   transition: transform .3s;
+}
+
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover {
+   transform: scale(1.1);
+}
+
+@keyframes appear {
+   0% {
+      transform: translateY(-50px);
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+@media screen and (min-width: 700px) {
+   .cards {
+      flex-flow: row wrap;
+      max-width: 670px;
+   }
+}
